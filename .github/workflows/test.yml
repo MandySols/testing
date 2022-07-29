@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: branch names
-      - run: echo "${{github.base_ref}} and ${{github.head_ref}}"
+      - run: echo "${GITHUB_HEAD_REF} and ${GITHUB_BASE_REF}"
       #sdf
       

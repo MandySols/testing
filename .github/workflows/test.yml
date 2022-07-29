@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: branch names
-        run: echo "${{GITHUB_HEAD_REF}}"
+        run: echo "${{github.base_ref}} and ${{github.head_ref}}"

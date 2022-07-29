@@ -9,6 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: branch names
-        run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_HEAD_REF})"
-      - name: print branches
-        run: echo 'branches sre' $BRANCH_NAME
+        run: echo "${{GITHUB_HEAD_REF}}"

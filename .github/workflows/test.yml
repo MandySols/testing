@@ -27,7 +27,7 @@ jobs:
       #const value = require('./branch-nomenclature.js')
       #await value('${{github.base_ref}}', '${{github.head_ref}}')
       - name: closing pr
-        if: ${{steps.set-result.outputs.result== 'false'}}
+        if: ${{steps.set-result.outputs.result== 'true'}}
         uses: superbrothers/close-pull-request@v3
         with:
          comment: "branch rules were violated"

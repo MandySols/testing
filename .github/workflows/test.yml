@@ -15,8 +15,9 @@ jobs:
         id: set-result
         with:
          script: |
-              function branches('${{github.base_ref}}', '${{github.head_ref}}'){
-                if(${{github.head_ref}}==='Manideepakakula-patch-1'){
+              return branches('${{github.head_ref}}', '${{github.base_ref}}')
+              function branches(head, base){
+                if(base==='Manideepakakula-patch-1'){
                     return true }
                 else {return false}
                 }

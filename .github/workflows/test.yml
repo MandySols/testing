@@ -7,5 +7,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump context
+        uses: crazy-max/ghaction-dump-context@v1
       - name: branch names
         run: echo "${{github.repository.default_branch}} "

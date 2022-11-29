@@ -10,4 +10,4 @@ jobs:
       - name: Dump context
         uses: crazy-max/ghaction-dump-context@v1
       - name: branch names
-        run: echo "${{github.repository.default_branch}} "
+        run: echo "${{github.event.organization.repository.default_branch}} "

@@ -6,8 +6,21 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    outputs:
+      value: ${{steps.v.outputs.result}}
     steps:
-      - name: Dump context
-        uses: crazy-max/ghaction-dump-context@v1
-      - name: branch names
-        run: echo "${{github.event.organization.repository.default_branch}} "
+      - name: first one
+        id: v
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const obj= {
+            'a': 'one',
+            'b': 'two'
+            }
+            return obj
+  second-run: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: second one
+        run: echo "${{ needs.run.outputs.value }}"

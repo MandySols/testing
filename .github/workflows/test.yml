@@ -15,8 +15,8 @@ jobs:
         with:
           script: |
             const obj= {
-            'a': 'one',
-            'b': 'two'
+            "a": "one",
+            "b": "two"
             }
             console.log(obj)
             return obj
@@ -24,4 +24,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: second one
-        run: echo "${{ fromJson(needs.run.outputs.value) }}"
+        run: |
+          echo "${{ fromJson(needs.run.outputs.value) }}"
+          echo "${{ fromJson(needs.run.outputs.value).a }}"

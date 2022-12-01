@@ -25,5 +25,5 @@ jobs:
     steps:
       - name: second one
         run: |
-          echo "${{ fromJson(needs.run.outputs.value) }}"
-          echo "${{ fromJson(needs.run.outputs.value).a }}"
+          echo "${{ fromJSON(needs.run.outputs.value) }}"
+          echo "${{ fromJSON(needs.run.outputs.value).a }}"

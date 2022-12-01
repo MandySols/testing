@@ -15,8 +15,8 @@ jobs:
         with:
           script: |
             const obj= {
-            "a": "one",
-            "b": "two"
+            a: "one",
+            b: "two"
             }
             console.log(obj)
             return obj
